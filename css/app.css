@@ -1,0 +1,10 @@
+#todo-list li label {
+	display: inline;
+}
+
+#todo-list li span {
+  visibility: hidden;
+}
+#todo-list li.completed span {
+  visibility: visible;;
+}
