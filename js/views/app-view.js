@@ -50,6 +50,7 @@ var app = app || {};
 		// of the app doesn't change.
 		render: function () {
 			var completed = app.todos.completed().length;
+			var priority = app.todos.priority().length;
 			var remaining = app.todos.remaining().length;
 
 			if (app.todos.length) {
@@ -58,6 +59,7 @@ var app = app || {};
 
 				this.$footer.html(this.statsTemplate({
 					completed: completed,
+					priority: priority,
 					remaining: remaining
 				}));
 
@@ -99,7 +101,8 @@ var app = app || {};
 			return {
 				title: this.$input.val().trim(),
 				order: app.todos.nextOrder(),
-				completed: false
+				completed: false,
+				priority: false
 			};
 		},
 
